@@ -147,7 +147,7 @@ for each in result:
 print(operator.mul(1,9))
 print(operator.pow(2,4))
 
-print(help(operator))
+# print(help(operator))
 
 result = itertools.combinations(states, 2)
 
@@ -230,50 +230,53 @@ for each in result:
 
 # os 
 
-# import os
+import os
 
-# os.mkdir('test_dir')
+os.mkdir('test_dir')
 
-# orig_dir = os.getcwd()
-# print(orig_dir)
+orig_dir = os.getcwd()
+print(orig_dir)
 
-# os.chdir(orig_dir + "\\\\" + 'test_dir')
-# new_dir = os.getcwd()
-# print(new_dir)
+os.chdir(orig_dir + '\\' + 'test_dir')
+new_dir = os.getcwd()
+print(new_dir)
 
-# os.chdir(orig_dir)
+os.chdir(orig_dir)
 
-# os.rename('test_dir', 'new_test_dir')
+os.rename('test_dir', 'new_test_dir')
 
-# l1 = os.listdir('new_test_dir')
-# print(l1)
-# l2 = os.listdir(os.curdir)
-# print(l2)
-# print(l2.sort())
+l1 = os.listdir('new_test_dir')
+print(l1)
+l2 = os.listdir(os.curdir)
+print(l2)
+print(l2.sort())
+
+# tokenizing dates next quiz
 
 #%%
 
 # Copy remove
 
-# import shutil
-# import os
-# import subprocess
-# shutil.rmtree('new_test_dir')
+import shutil
+import os
+import subprocess
 
-# os.mkdir('test')
-# shutil.copytree('test', 'test1')
+shutil.rmtree('test_dir')
 
-# os.system('python 01_Strings.py')
-# subprocess.call('python 01_Strings.py', shell=True)
+os.mkdir('test')
+shutil.copytree('test', 'test1')
 
-# path = os.path.join(os.getcwd(), 'test')
-# print(path)
-# foldername, basename = os.path.split(path)
-# print(foldername)
-# print(basename)
+os.system('python 01_Strings.py')
+subprocess.call('python 01_Strings.py', shell=True)
 
-# shutil.rmtree('test')
-# shutil.rmtree('test1')
+path = os.path.join(os.getcwd(), 'test')
+print(path)
+foldername, basename = os.path.split(path)
+print(foldername)
+print(basename)
+
+shutil.rmtree('test')
+shutil.rmtree('test1')
 #%%
 
 # Counter
@@ -295,6 +298,7 @@ deduct = {1:1, 2:2}
 
 cnt.subtract(deduct)
 print(cnt)
+
 #%%
 
 # Default dic
@@ -333,6 +337,7 @@ cnt = Counter(list)
 od = OrderedDict(cnt.most_common())
 for key, value in od.items():
     print(key, value)
+
 #%%
 
 # Deque
@@ -360,29 +365,32 @@ print(deq.count("a"))
 
 # Optional arg
 
-# import argparse
+import argparse
 
-# parser = argparse.ArgumentParser()
-# parser.add_argument('-o', '--output', action='store_true', help="shows output")
-# args = parser.parse_args()
-# if args.output:
-#     print("This is some output")
+parser = argparse.ArgumentParser()
+parser.add_argument('-o', '--output', action='store_true', help="shows output")
+args = parser.parse_args()
+
+if args.output:
+    print("This is some output")
     
 #%%
 
 # Required arg
 
-# import argparse
-# parser = argparse.ArgumentParser()
-# parser.add_argument('--name', required=True)
-# args = parser.parse_args()
-# print('Hello {}'.format(args.name))
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--name', required=True)
+args = parser.parse_args()
+print('Hello {}'.format(args.name))
+
 #%%
 
 # runner
 
-# import os
-# os.system('python required_arg.py --name Amir')
-# os.system('python optional_arg.py -o')
-# os.system('python optional_arg.py --output')
+import os
+
+os.system('python3 required_arg.py --name Amir')
+os.system('python3 optional_arg.py -o')
+os.system('python3 optional_arg.py --output')
 # %%
