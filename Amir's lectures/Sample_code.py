@@ -98,7 +98,7 @@ class TextClassificationModel(nn.Module):
         return self.softmax(self.fc2(self.fc(embedded)))
 
 hidden = 100
-EPOCHS = 100
+EPOCHS = 5
 LR = 0.001
 BATCH_SIZE = 64
 emsize = 128
@@ -168,4 +168,3 @@ torch.save(model.state_dict(), 'model_weights.pt')
 # Load the model for inference
 model.load_state_dict(torch.load('model_weights.pt'))
 
-# %%
